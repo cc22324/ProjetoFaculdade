@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <link rel="stylesheet" href="styles.css">
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+</head>
+<body>
+    <header>
+        <h1>Comentários sobre Leituras</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Compartilhe Suas Opiniões</h2>
+            <form>
+                <label for="livro">Nome do Livro:</label>
+                <input type="text" id="livro" name="livro" required>
+                <br><br>
+                <label for="comentario">Seu Comentário:</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+                <br><br>
+                <button type="submit">Enviar Comentário</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Compras Online</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Escolha seus Livros</h2>
+            <p>Aqui você pode selecionar e comprar livros disponíveis:</p>
+            <ul>
+                <li>Livro A - <button>Comprar</button></li>
+                <li>Livro B - <button>Comprar</button></li>
+                <li>Livro C - <button>Comprar</button></li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Site de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo ao Meu Site de Livros</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Sobre o Site</h2>
+            <p>Aqui você pode comprar livros, compartilhar suas opiniões sobre leituras e organizar suas listas de livros lidos e desejados.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Listas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Minhas Listas de Livros</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Gerencie Suas Listas</h2>
+            <form>
+                <label for="lista">Escolha uma Lista:</label>
+                <select id="lista" name="lista">
+                    <option value="lidos">Livros Lidos</option>
+                    <option value="desejados">Livros Desejados</option>
+                </select>
+                <br><br>
+                <label for="livro">Nome do Livro:</label>
+                <input type="text" id="livro" name="livro" required>
+                <br><br>
+                <button type="submit">Adicionar à Lista</button>
+            </form>
+            <h3>Livros na Lista:</h3>
+            <ul>
+                <!-- Lista de livros adicionados -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+</body>
+</html>
