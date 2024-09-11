@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Opinião sobre o Livro</title>
+</head>
+<body>
+    <h1>Formulário de Opinião sobre o Livro</h1>
+    <form action="/enviar-opiniao" method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="titulo">Título do Livro:</label><br>
+        <input type="text" id="titulo" name="titulo" required><br><br>
+        
+        <label for="autor">Autor do Livro:</label><br>
+        <input type="text" id="autor" name="autor" required><br><br>
+        
+        <label for="nota">Nota (1 a 5):</label><br>
+        <select id="nota" name="nota" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select><br><br>
+        
+        <label for="resumo">Resumo da Sua Opinião:</label><br>
+        <textarea id="resumo" name="resumo" rows="5" cols="40" required></textarea><br><br>
+        
+        <label for="gostou">O que você mais gostou no livro?</label><br>
+        <textarea id="gostou" name="gostou" rows="3" cols="40"></textarea><br><br>
+        
+        <label for="naogostou">O que você menos gostou no livro?</label><br>
+        <textarea id="naogostou" name="naogostou" rows="3" cols="40"></textarea><br><br>
+        
+        <label for="recomendaria">Você recomendaria este livro para outras pessoas?</label><br>
+        <input type="radio" id="sim" name="recomendaria" value="Sim" required>
+        <label for="sim">Sim</label><br>
+        <input type="radio" id="nao" name="recomendaria" value="Não">
+        <label for="nao">Não</label><br><br>
+        
+        <label for="recomendacao">Se sim, para quem você recomendaria?</label><br>
+        <textarea id="recomendacao" name="recomendacao" rows="3" cols="40"></textarea><br><br>
+        
+        <label for="comentarios">Comentários adicionais:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea><br><br>
+        
+        <input type="submit" value="Enviar Opinião">
+    </form>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Lista de Livros Desejados</title>
+</head>
+<body>
+    <h1>Formulário de Lista de Livros Desejados</h1>
+    <form action="/enviar-lista" method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+        
+        <label for="email">E-mail (opcional, para contato futuro):</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <h3>Lista de Livros que Deseja Ler:</h3>
+        
+        <label for="livro1_titulo">Livro 1:</label><br>
+        Título: <input type="text" id="livro1_titulo" name="livro1_titulo"><br>
+        Autor: <input type="text" id="livro1_autor" name="livro1_autor"><br><br>
+        
+        <label for="livro2_titulo">Livro 2:</label><br>
+        Título: <input type="text" id="livro2_titulo" name="livro2_titulo"><br>
+        Autor: <input type="text" id="livro2_autor" name="livro2_autor"><br><br>
+        
+        <label for="livro3_titulo">Livro 3:</label><br>
+        Título: <input type="text" id="livro3_titulo" name="livro3_titulo"><br>
+        Autor: <input type="text" id="livro3_autor" name="livro3_autor"><br><br>
+        
+        <!-- Adicione mais campos conforme necessário -->
+
+        <label for="observacoes">Alguma observação sobre sua lista de desejos?</label><br>
+        <textarea id="observacoes" name="observacoes" rows="5" cols="40"></textarea><br><br>
+        
+        <input type="submit" value="Enviar Lista">
+    </form>
+</body>
+</html>
