@@ -127,6 +127,8 @@ h1 {
     text-align: center;
     color: #1b5e20; /* Título da página em verde escuro */
 }
+
+TELA DE COMENTÁRIO
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -134,110 +136,6 @@ h1 {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comentários</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <header>
@@ -270,6 +168,8 @@ form button:hover {
     </footer>
 </body>
 </html>
+
+TELA DE COMPRA
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -277,110 +177,6 @@ form button:hover {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Compras Online</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <header>
@@ -410,6 +206,8 @@ form button:hover {
     </footer>
 </body>
 </html>
+
+GRUPO DE LEITURA
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -417,110 +215,6 @@ form button:hover {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grupo de Leitura</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <header>
@@ -568,6 +262,8 @@ form button:hover {
     </footer>
 </body>
 </html>
+
+TELA DE INICIO
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -575,110 +271,6 @@ form button:hover {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site de Livros</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <header>
@@ -703,6 +295,8 @@ form button:hover {
     </footer>
 </body>
 </html>
+
+TELA DE LISTA DE LIVROS LIDOS
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -710,110 +304,6 @@ form button:hover {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Listas</title>
     <link rel="stylesheet" href="styles.css">
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <header>
@@ -849,116 +339,14 @@ form button:hover {
         </section>
     </main>
     <footer>
+
+TELA LISTA DE DESEJOS
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Lista de Livros Desejados</title>
-    <style>
-        body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
-
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
-
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
-
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
-
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
-
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
-
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
-    </style>
 </head>
 <body>
     <h1>Formulário de Lista de Livros Desejados</h1>
