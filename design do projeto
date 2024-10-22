@@ -292,12 +292,12 @@ pagina inicial
             <div class="filter-item">
                 <h3>Categorias:</h3>
                 <label><input type="checkbox"> Ficção</label><br>
-                <label><input type="checkbox"> Não Ficção</label><br>
                 <label><input type="checkbox"> Infantojuvenil</label><br>
                 <label><input type="checkbox"> Fantasia</label><br>
                 <label><input type="checkbox"> Romance</label><br>
                 <label><input type="checkbox"> Mistério</label><br>
                 <label><input type="checkbox"> Biografias</label>
+                <label><input type="checkbox"> Terror</label><br>
             </div>
 
             <div class="filter-item">
