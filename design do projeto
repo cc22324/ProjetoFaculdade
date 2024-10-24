@@ -392,7 +392,7 @@ pagina de compra
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Compras Online</title>
+    <title>Carrinho de Compras</title>
     <link rel="stylesheet" href="styles.css">
     <style>
         body {
@@ -454,82 +454,39 @@ pagina de compra
             color: #1b5e20; /* Títulos em verde escuro */
         }
 
-        form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-            padding: 20px;
-            border-radius: 8px;
-        }
-
-        form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
-        }
-
-        form input[type="text"], form textarea, form select {
-            width: 100%;
+        .cart-item {
+            border: 1px solid #1b5e20; /* Borda em verde escuro para os itens do carrinho */
+            border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-            border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
         }
 
-        form button {
+        .cart-item input[type="number"] {
+            width: 50px;
+            margin-left: 10px;
+        }
+
+        .checkout-button {
             background-color: #4caf50; /* Botão em verde mais vibrante */
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            margin-top: 20px;
         }
 
-        form button:hover {
+        .checkout-button:hover {
             background-color: #388e3c; /* Cor do botão ao passar o mouse */
         }
 
-        #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
-            padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
-            border-radius: 8px;
+        .total {
+            font-weight: bold;
             margin-top: 20px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            color: #1b5e20;
-        }
-
-        .filters, .products {
-            margin: 20px 0;
-        }
-
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-        }
-
-        .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-            margin-right: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
         }
     </style>
 </head>
@@ -541,28 +498,44 @@ pagina de compra
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
                 <li><a href="comentarios.html">Comentários</a></li>
                 <li><a href="listas.html">Minhas Listas</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section>
-            <h2>Escolha seus Livros</h2>
-            <p>Aqui você pode selecionar e comprar livros disponíveis:</p>
-            <ul>
-                <li>Livro A - <button>Comprar</button></li>
-                <li>Livro B - <button>Comprar</button></li>
-                <li>Livro C - <button>Comprar</button></li>
-            </ul>
-        </section>
+        <h2>Seu Carrinho de Compras</h2>
+        <div class="cart-item">
+            <span>Livro A</span>
+            <div>
+                <input type="number" value="1" min="1"> 
+                <button>Remover</button>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span>Livro B</span>
+            <div>
+                <input type="number" value="1" min="1"> 
+                <button>Remover</button>
+            </div>
+        </div>
+        <div class="cart-item">
+            <span>Livro C</span>
+            <div>
+                <input type="number" value="1" min="1"> 
+                <button>Remover</button>
+            </div>
+        </div>
+        <div class="total">Total: R$ 100,00</div>
+        <button class="checkout-button">Finalizar Compra</button>
     </main>
     <footer>
         <p>&copy; 2024 Meu Site de Livros</p>
     </footer>
 </body>
 </html>
+
  pagina de comentario
 <!DOCTYPE html>
 <html lang="pt-BR">
