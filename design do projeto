@@ -1,4 +1,3 @@
-pagina inicial
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,16 +10,17 @@ pagina inicial
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         #logo {
@@ -31,10 +31,11 @@ pagina inicial
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 10px;
         }
 
@@ -49,44 +50,43 @@ pagina inicial
 
         main {
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
+            background-color: #f0f8f0;
         }
 
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
             padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
         }
 
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
+        h1, h2 {
+            color: #1b5e20;
         }
 
         form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
+            background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
         }
 
         form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
+            color: #1b5e20;
         }
 
         form input[type="text"], form textarea, form select {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
+            background-color: #ffffff;
         }
 
         form button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -95,13 +95,13 @@ pagina inicial
         }
 
         form button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+            background-color: #388e3c;
         }
 
         #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
+            background-color: #e0f2f1;
             padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 8px;
             margin-top: 20px;
             max-height: 300px;
@@ -109,7 +109,7 @@ pagina inicial
         }
 
         #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
+            background-color: #a5d6a7;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
@@ -125,23 +125,39 @@ pagina inicial
         }
 
         .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
+            border: 1px solid #1b5e20;
             border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
             display: flex;
             align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
+            background-color: #f0f8f0;
+            flex-wrap: wrap;
         }
 
         .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+            max-width: 100px;
             margin-right: 20px;
         }
 
         h1 {
             text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
+        }
+
+        @media (max-width: 768px) {
+            header, main, footer {
+                text-align: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -169,17 +185,29 @@ pagina inicial
             </p>
             <p>
                 Nesse aplicativo você pode entrar em chats de conversação para debater sobre suas leituras com 
-                pessoas que leram os mesmo titulos que você.
+                pessoas que leram os mesmos títulos que você.
             </p>
-
         </section>
     </main>
     <footer>
         <p>&copy; Book Net</p>
     </footer>
+
+    <script>
+        // Exemplo de JavaScript para interatividade
+        document.addEventListener("DOMContentLoaded", function() {
+            const navLinks = document.querySelectorAll("nav ul li a");
+            navLinks.forEach(link => {
+                link.addEventListener("click", function(event) {
+                    event.preventDefault();
+                    alert(`Você clicou em ${link.innerText}`);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
- pagina de produto 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -190,79 +218,103 @@ pagina inicial
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            padding: 0;
+            background-color: #e6f4e4;
             display: flex;
             flex-direction: column;
             min-height: 100vh;
         }
+        
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
-
+        
+        #logo img {
+            width: 100px;
+            margin: 0 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 0;
+            font-size: 24px;
+        }
+        
         .content {
             display: flex;
-            flex: 1; /* Faz com que a área de conteúdo ocupe o máximo de espaço possível */
-            width: 100%;
-        }
-
-        .filters {
-            width: 20%;
+            flex: 1;
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo dos filtros */
-            margin-right: 20px;
+            gap: 20px;
+            flex-wrap: wrap;
         }
-
+        
+        .filters {
+            flex: 1 1 250px;
+            background-color: #f0f8f0;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 300px;
+        }
+        
         .products {
-            width: 80%;
+            flex: 3 1 500px;
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Organiza os produtos em 3 colunas */
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             grid-gap: 20px;
         }
-
+        
         .filter-item {
             margin-bottom: 20px;
         }
-
+        
         .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
+            border: 1px solid #1b5e20;
             border-radius: 5px;
             padding: 10px;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-            text-align: center; /* Centraliza o conteúdo */
+            background-color: #f0f8f0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-
+        
         .product img {
-            max-width: 150px; /* Aumenta o tamanho da imagem */
-            margin-bottom: 10px; /* Espaço entre a imagem e a descrição */
+            max-width: 150px;
+            margin-bottom: 10px;
         }
-
-        .product div {
-            text-align: left; /* Alinha a descrição à esquerda */
-        }
-
+        
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
-            padding: 5px 0; /* Reduz o espaçamento interno (padding) do rodapé */
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            font-size: 12px; /* Diminui o tamanho da fonte para compactar o rodapé */
+            padding: 5px 0;
+            font-size: 12px;
+            position: relative;
         }
 
-</style>    
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .content {
+                flex-direction: column;
+                padding: 10px;
+            }
+
+            header, footer {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100">
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
         <h1>Produtos da Livraria</h1>
     </header>
@@ -273,110 +325,47 @@ pagina inicial
             <h2>Filtros de Busca</h2>
             <div class="filter-item">
                 <h3>Preço:</h3>
-                <label><input type="checkbox"> Até R$ 20,00</label><br>
-                <label><input type="checkbox"> R$ 20,01 - R$ 50,00</label><br>
-                <label><input type="checkbox"> R$ 50,01 - R$ 100,00</label><br>
-                <label><input type="checkbox"> Acima de R$ 100,00</label>
+                <label><input type="checkbox" class="price-filter" value="20"> Até R$ 20,00</label><br>
+                <label><input type="checkbox" class="price-filter" value="50"> R$ 20,01 - R$ 50,00</label><br>
+                <label><input type="checkbox" class="price-filter" value="100"> R$ 50,01 - R$ 100,00</label><br>
+                <label><input type="checkbox" class="price-filter" value="101"> Acima de R$ 100,00</label>
             </div>
 
             <div class="filter-item">
                 <h3>Classificação Indicativa:</h3>
-                <label><input type="checkbox"> Livre</label><br>
-                <label><input type="checkbox"> 10 anos</label><br>
-                <label><input type="checkbox"> 12 anos</label><br>
-                <label><input type="checkbox"> 14 anos</label><br>
-                <label><input type="checkbox"> 16 anos</label><br>
-                <label><input type="checkbox"> 18 anos</label>
-            </div>
-
-            <div class="filter-item">
-                <h3>Categorias:</h3>
-                <label><input type="checkbox"> Ficção</label><br>
-                <label><input type="checkbox"> Infantojuvenil</label><br>
-                <label><input type="checkbox"> Fantasia</label><br>
-                <label><input type="checkbox"> Romance</label><br>
-                <label><input type="checkbox"> Mistério</label><br>
-                <label><input type="checkbox"> Biografias</label>
-                <label><input type="checkbox"> Terror</label><br>
-            </div>
-
-            <div class="filter-item">
-                <h3>Tipos de Livros:</h3>
-                <label><input type="checkbox"> Box de Livros</label><br>
-                <label><input type="checkbox"> Trilogia</label><br>
-                <label><input type="checkbox"> Duologia</label>
+                <label><input type="checkbox" class="age-filter" value="Livre"> Livre</label><br>
+                <label><input type="checkbox" class="age-filter" value="10"> 10 anos</label><br>
+                <label><input type="checkbox" class="age-filter" value="12"> 12 anos</label><br>
+                <label><input type="checkbox" class="age-filter" value="14"> 14 anos</label><br>
+                <label><input type="checkbox" class="age-filter" value="16"> 16 anos</label><br>
+                <label><input type="checkbox" class="age-filter" value="18"> 18 anos</label>
             </div>
         </div>
 
         <!-- Produtos -->
         <div class="products">
-            <div class="product">
+            <div class="product" data-price="149.90" data-age="12">
                 <img src="senhordosaneis.jpg" alt="O Senhor dos Anéis">
-                <div>
-                    <h3>O Senhor dos Anéis - Edição Completa</h3>
-                    <p>Preço: R$ 149,90</p>
-                    <p>Categoria: Fantasia</p>
-                    <p>Classificação Indicativa: 12 anos</p>
-                    <p>Formato: Box de Livros</p>
-                    <p>Descrição: A obra-prima de J.R.R. Tolkien em uma edição especial.</p>
-                </div>
+                <h3>O Senhor dos Anéis - Edição Completa</h3>
+                <p>Preço: R$ 149,90</p>
+                <p>Categoria: Fantasia</p>
+                <p>Classificação Indicativa: 12 anos</p>
             </div>
 
-            <div class="product">
+            <div class="product" data-price="39.90" data-age="12">
                 <img src="culpadasestrelas.jpg" alt="A Culpa é das Estrelas">
-                <div>
-                    <h3>A Culpa é das Estrelas</h3>
-                    <p>Preço: R$ 39,90</p>
-                    <p>Categoria: Romance</p>
-                    <p>Classificação Indicativa: 12 anos</p>
-                    <p>Descrição: Uma emocionante história de amor e superação.</p>
-                </div>
+                <h3>A Culpa é das Estrelas</h3>
+                <p>Preço: R$ 39,90</p>
+                <p>Categoria: Romance</p>
+                <p>Classificação Indicativa: 12 anos</p>
             </div>
 
-            <div class="product">
-                <img src="harrypotter.jpg" alt="Trilogia da Fundação">
-                <div>
-                    <h3>Harry Potter</h3>
-                    <p>Preço: R$ 129,90</p>
-                    <p>Categoria:Ficção</p>
-                    <p>Classificação Indicativa: 14 anos</p>
-                    <p>Formato: Trilogia</p>
-                    <p>Descrição: A épica saga de JK. Rowling.</p>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="cronicas de narnia.jpg" alt="As Crônicas de Nárnia">
-                <div>
-                    <h3>As Crônicas de Nárnia - Edição de Luxo</h3>
-                    <p>Preço: R$ 89,90</p>
-                    <p>Categoria: Infantojuvenil</p>
-                    <p>Classificação Indicativa: Livre</p>
-                    <p>Formato: Box de Livros</p>
-                    <p>Descrição: Todos os livros da clássica série de C.S. Lewis.</p>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="diariodeannnefrank.jpg" alt="O Diário de Anne Frank">
-                <div>
-                    <h3>O Diário de Anne Frank</h3>
-                    <p>Preço: R$ 29,90</p>
-                    <p>Categoria: Biografias</p>
-                    <p>Classificação Indicativa: 12 anos</p>
-                    <p>Descrição: O relato emocionante de uma jovem durante a Segunda Guerra Mundial.</p>
-                </div>
-            </div>
-
-            <div class="product">
-                <img src="artedeligaofds.jpg" alt="A Sutil Arte de Ligar o F*da-se">
-                <div>
-                    <h3>A Sutil Arte de Ligar o F*da-se</h3>
-                    <p>Preço: R$ 34,90</p>
-                    <p>Categoria: Não Ficção</p>
-                    <p>Classificação Indicativa: 14 anos</p>
-                    <p>Descrição: Um guia provocador sobre a busca de significado na vida.</p>
-                </div>
+            <div class="product" data-price="129.90" data-age="14">
+                <img src="harrypotter.jpg" alt="Harry Potter">
+                <h3>Harry Potter</h3>
+                <p>Preço: R$ 129,90</p>
+                <p>Categoria: Ficção</p>
+                <p>Classificação Indicativa: 14 anos</p>
             </div>
         </div>
     </div>
@@ -384,9 +373,30 @@ pagina inicial
     <footer>
         <p>&copy; Livraria Online</p>
     </footer>
+
+    <script>
+        // Função para aplicar filtros
+        document.querySelectorAll(".price-filter, .age-filter").forEach(checkbox => {
+            checkbox.addEventListener("change", function() {
+                const selectedPrices = Array.from(document.querySelectorAll(".price-filter:checked")).map(cb => parseFloat(cb.value));
+                const selectedAges = Array.from(document.querySelectorAll(".age-filter:checked")).map(cb => cb.value);
+                const products = document.querySelectorAll(".product");
+
+                products.forEach(product => {
+                    const productPrice = parseFloat(product.getAttribute("data-price"));
+                    const productAge = product.getAttribute("data-age");
+                    const matchPrice = selectedPrices.length === 0 || selectedPrices.some(price => {
+                        return price === 101 ? productPrice > 100 : productPrice <= price;
+                    });
+                    const matchAge = selectedAges.length === 0 || selectedAges.includes(productAge);
+                    product.style.display = matchPrice && matchAge ? "block" : "none";
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-pagina de compra 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -399,11 +409,11 @@ pagina de compra
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
@@ -437,11 +447,11 @@ pagina de compra
 
         main {
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
+            background-color: #f0f8f0;
         }
 
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -450,19 +460,19 @@ pagina de compra
             bottom: 0;
         }
 
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
+        h2, .total {
+            color: #1b5e20;
         }
 
         .cart-item {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os itens do carrinho */
+            border: 1px solid #1b5e20;
             border-radius: 5px;
             padding: 10px;
             margin: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
+            background-color: #f0f8f0;
         }
 
         .cart-item input[type="number"] {
@@ -471,7 +481,7 @@ pagina de compra
         }
 
         .checkout-button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -481,7 +491,7 @@ pagina de compra
         }
 
         .checkout-button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+            background-color: #388e3c;
         }
 
         .total {
@@ -506,37 +516,73 @@ pagina de compra
     </header>
     <main>
         <h2>Seu Carrinho de Compras</h2>
-        <div class="cart-item">
+
+        <div class="cart-item" data-price="50">
             <span>Livro A</span>
             <div>
-                <input type="number" value="1" min="1"> 
-                <button>Remover</button>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
             </div>
         </div>
-        <div class="cart-item">
+
+        <div class="cart-item" data-price="30">
             <span>Livro B</span>
             <div>
-                <input type="number" value="1" min="1"> 
-                <button>Remover</button>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
             </div>
         </div>
-        <div class="cart-item">
+
+        <div class="cart-item" data-price="20">
             <span>Livro C</span>
             <div>
-                <input type="number" value="1" min="1"> 
-                <button>Remover</button>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
             </div>
         </div>
-        <div class="total">Total: R$ 100,00</div>
+
+        <div class="total">Total: R$ <span id="total-price">100,00</span></div>
         <button class="checkout-button">Finalizar Compra</button>
     </main>
     <footer>
         <p>&copy; 2024 Meu Site de Livros</p>
     </footer>
+
+    <script>
+        // Função para atualizar o preço total
+        function updateTotal() {
+            let total = 0;
+            const cartItems = document.querySelectorAll('.cart-item');
+            
+            cartItems.forEach(item => {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('.quantity').value);
+                total += price * quantity;
+            });
+            
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        }
+
+        // Atualizar total ao mudar quantidade
+        document.querySelectorAll('.quantity').forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+
+        // Remover item do carrinho
+        document.querySelectorAll('.remove-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                item.remove();
+                updateTotal(); // Atualizar o total após remover o item
+            });
+        });
+
+        // Atualizar total ao carregar a página
+        updateTotal();
+    </script>
 </body>
 </html>
 
- pagina de comentario
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -545,20 +591,22 @@ pagina de compra
     <title>Comentários</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Estilos base */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         #logo {
@@ -569,10 +617,11 @@ pagina de compra
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 10px;
         }
 
@@ -587,11 +636,11 @@ pagina de compra
 
         main {
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
+            background-color: #f0f8f0;
         }
 
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -600,31 +649,32 @@ pagina de compra
             bottom: 0;
         }
 
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
+        h1, h2 {
+            color: #1b5e20;
         }
 
+        /* Estilo do formulário */
         form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
+            background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
         }
 
         form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
+            color: #1b5e20;
         }
 
-        form input[type="text"], form textarea, form select {
+        form input[type="text"], form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
+            background-color: #ffffff;
         }
 
         form button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -633,13 +683,14 @@ pagina de compra
         }
 
         form button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+            background-color: #388e3c;
         }
 
+        /* Área de comentários */
         #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
+            background-color: #e0f2f1;
             padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 8px;
             margin-top: 20px;
             max-height: 300px;
@@ -647,39 +698,27 @@ pagina de compra
         }
 
         #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
+            background-color: #a5d6a7;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
             color: #1b5e20;
         }
 
-        .filters, .products {
-            margin: 20px 0;
-        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header, nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            main {
+                padding: 10px;
+            }
 
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-        }
-
-        .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-            margin-right: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
+            #logo img {
+                width: 80px;
+            }
         }
     </style>
 </head>
@@ -688,7 +727,6 @@ pagina de compra
         <div id="logo">
             <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
         </div>
-        
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
@@ -701,24 +739,54 @@ pagina de compra
     <main>
         <section>
             <h2>Compartilhe Suas Opiniões</h2>
-            <form>
+            <form id="commentForm">
                 <label for="livro">Nome do Livro:</label>
                 <input type="text" id="livro" name="livro" required>
-                <br><br>
                 <label for="comentario">Seu Comentário:</label>
                 <textarea id="comentario" name="comentario" rows="4" required></textarea>
-                <br><br>
                 <button type="submit">Enviar Comentário</button>
             </form>
+
+            <!-- Área para exibir os comentários -->
+            <div id="chatArea">
+                <h3>Comentários:</h3>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Meu Site de Livros</p>
     </footer>
+
+    <script>
+        // Seleciona o formulário e o container de comentários
+        const commentForm = document.getElementById('commentForm');
+        const chatArea = document.getElementById('chatArea');
+
+        // Função para adicionar um comentário
+        function addComment(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Coleta dados do formulário
+            const livro = document.getElementById('livro').value;
+            const comentario = document.getElementById('comentario').value;
+
+            // Cria um novo elemento de parágrafo para o comentário
+            const newComment = document.createElement('p');
+            newComment.textContent = `Livro: ${livro} - Comentário: ${comentario}`;
+
+            // Adiciona o comentário na área de comentários
+            chatArea.appendChild(newComment);
+
+            // Limpa o formulário
+            commentForm.reset();
+        }
+
+        // Adiciona um evento ao formulário para enviar comentários
+        commentForm.addEventListener('submit', addComment);
+    </script>
 </body>
 </html>
 
-grupo de laeitura
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -731,16 +799,17 @@ grupo de laeitura
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         #logo {
@@ -751,10 +820,11 @@ grupo de laeitura
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            flex-wrap: wrap;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 10px;
         }
 
@@ -769,11 +839,11 @@ grupo de laeitura
 
         main {
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
+            background-color: #f0f8f0;
         }
 
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -782,31 +852,31 @@ grupo de laeitura
             bottom: 0;
         }
 
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
+        h1, h2 {
+            color: #1b5e20;
         }
 
         form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
+            background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
         }
 
         form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
+            color: #1b5e20;
         }
 
-        form input[type="text"], form textarea, form select {
+        form input[type="text"], form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
+            background-color: #ffffff;
         }
 
         form button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -815,13 +885,13 @@ grupo de laeitura
         }
 
         form button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+            background-color: #388e3c;
         }
 
         #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
+            background-color: #e0f2f1;
             padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 8px;
             margin-top: 20px;
             max-height: 300px;
@@ -829,39 +899,27 @@ grupo de laeitura
         }
 
         #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
+            background-color: #a5d6a7;
             padding: 10px;
             border-radius: 5px;
             margin-bottom: 10px;
             color: #1b5e20;
         }
 
-        .filters, .products {
-            margin: 20px 0;
-        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            header, nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            main {
+                padding: 10px;
+            }
 
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-        }
-
-        .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-            margin-right: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
+            #logo img {
+                width: 80px;
+            }
         }
     </style>
 </head>
@@ -889,13 +947,13 @@ grupo de laeitura
             <!-- Formulário para envio de mensagem -->
             <form id="chatForm">
                 <label for="nome">Seu Nome:</label>
-                <input type="text" id="nome" name="nome" required><br><br>
+                <input type="text" id="nome" name="nome" required>
 
                 <label for="livro">Título do Livro:</label>
-                <input type="text" id="livro" name="livro" required><br><br>
+                <input type="text" id="livro" name="livro" required>
 
-                <label for="mensagem">Sua Mensagem:</label><br>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+                <label for="mensagem">Sua Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
 
                 <button type="submit">Enviar</button>
             </form>
@@ -911,9 +969,38 @@ grupo de laeitura
     <footer>
         <p>&copy; 2024 Meu Site de Livros</p>
     </footer>
+
+    <script>
+        // JavaScript para enviar e exibir mensagens
+        const chatForm = document.getElementById('chatForm');
+        const chatArea = document.getElementById('chatArea');
+
+        // Função para adicionar uma nova mensagem
+        function addMessage(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Coleta os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const livro = document.getElementById('livro').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Cria um novo parágrafo para exibir a mensagem
+            const newMessage = document.createElement('p');
+            newMessage.textContent = `${nome} sobre "${livro}": ${mensagem}`;
+
+            // Adiciona a nova mensagem à área de mensagens
+            chatArea.appendChild(newMessage);
+
+            // Limpa o formulário após o envio
+            chatForm.reset();
+        }
+
+        // Adiciona o evento de submissão ao formulário
+        chatForm.addEventListener('submit', addMessage);
+    </script>
 </body>
 </html>
-  listas de desejos 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -925,11 +1012,11 @@ grupo de laeitura
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
@@ -941,185 +1028,137 @@ grupo de laeitura
             margin-left: 20px;
         }
 
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin: 0 10px;
-        }
-
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        main {
-            padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-        }
-
-        footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-            color: #fff;
+        h1 {
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
-
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
+            color: #1b5e20;
         }
 
         form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
+            background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
-            text-align: center;
+            max-width: 600px;
+            margin: auto;
         }
 
         form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
+            color: #1b5e20;
         }
 
-        form input[type="text"], form textarea, form select {
+        form input[type="text"], form input[type="email"], form textarea {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
         }
 
-        form button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+        form button, form input[type="submit"] {
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            margin-top: 10px;
         }
 
-        form button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+        form button:hover, form input[type="submit"]:hover {
+            background-color: #388e3c;
         }
 
-        #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
-            padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
-            border-radius: 8px;
-            margin-top: 20px;
-            max-height: 300px;
-            overflow-y: auto;
+        .livro {
+            margin-bottom: 20px;
         }
 
-        #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            color: #1b5e20;
-        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            form {
+                padding: 15px;
+            }
 
-        .filters, .products {
-            margin: 20px 0;
+            #logo img {
+                width: 80px;
+            }
         }
-
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-        }
-
-        .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-            margin-right: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
-        }
-    </style>   
+    </style>
 </head>
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+            <img src="logo.jpg" alt="Logo da Livraria" width="100">
         </div>
+    </header>
+
     <h1>Formulário de Lista de Livros Desejados</h1>
-    <form action="/enviar-lista" method="post">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-        
-        <label for="email">E-mail (opcional, para contato futuro):</label><br>
-        <input type="email" id="email" name="email"><br><br>
-        
+    <form id="livrosForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail (opcional, para contato futuro):</label>
+        <input type="email" id="email" name="email">
+
         <h3>Lista de Livros que Deseja Ler:</h3>
-        
-        <label for="livro1_titulo">Livro 1:</label><br>
-        Título: <input type="text" id="livro1_titulo" name="livro1_titulo"><br>
-        Autor: <input type="text" id="livro1_autor" name="livro1_autor"><br><br>
-        
-        <label for="livro2_titulo">Livro 2:</label><br>
-        Título: <input type="text" id="livro2_titulo" name="livro2_titulo"><br>
-        Autor: <input type="text" id="livro2_autor" name="livro2_autor"><br><br>
-        
-        <label for="livro3_titulo">Livro 3:</label><br>
-        Título: <input type="text" id="livro3_titulo" name="livro3_titulo"><br>
-        Autor: <input type="text" id="livro3_autor" name="livro3_autor"><br><br>
-        
-        <!-- Adicione mais campos conforme necessário -->
+        <div id="livrosContainer">
+            <div class="livro">
+                <label>Livro 1:</label><br>
+                Título: <input type="text" name="livro_titulo[]" required><br>
+                Autor: <input type="text" name="livro_autor[]" required>
+            </div>
+        </div>
+
+        <button type="button" onclick="adicionarLivro()">Adicionar Mais Livros</button><br><br>
 
         <label for="observacoes">Alguma observação sobre sua lista de desejos?</label><br>
-        <textarea id="observacoes" name="observacoes" rows="5" cols="40"></textarea><br><br>
-        
+        <textarea id="observacoes" name="observacoes" rows="5"></textarea><br><br>
+
         <input type="submit" value="Enviar Lista">
     </form>
+
+    <script>
+        // Função para adicionar novos campos de livro
+        let contadorLivros = 1;
+        function adicionarLivro() {
+            contadorLivros++;
+            const livrosContainer = document.getElementById('livrosContainer');
+
+            // Cria o novo elemento de livro
+            const novoLivro = document.createElement('div');
+            novoLivro.classList.add('livro');
+            novoLivro.innerHTML = `
+                <label>Livro ${contadorLivros}:</label><br>
+                Título: <input type="text" name="livro_titulo[]" required><br>
+                Autor: <input type="text" name="livro_autor[]" required>
+            `;
+            livrosContainer.appendChild(novoLivro);
+        }
+    </script>
 </body>
 </html>
 
-listas de livros lidos 
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Listas</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
+        /* CSS Base */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 20px;
-            background-color: #e6f4e4; /* Tom de verde claro para o fundo */
+            background-color: #e6f4e4;
         }
 
         header {
-            background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
 
         #logo {
@@ -1130,10 +1169,10 @@ listas de livros lidos
             list-style-type: none;
             padding: 0;
             margin: 0;
+            display: flex;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 10px;
         }
 
@@ -1146,13 +1185,20 @@ listas de livros lidos
             text-decoration: underline;
         }
 
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+        }
+
         main {
             padding: 20px;
-            background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
+            background-color: #f0f8f0;
+            max-width: 800px;
+            margin: auto;
         }
 
         footer {
-            background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
+            background-color: #2e7d32;
             color: #fff;
             text-align: center;
             padding: 10px 0;
@@ -1161,31 +1207,26 @@ listas de livros lidos
             bottom: 0;
         }
 
-        h1, h2, h3 {
-            color: #1b5e20; /* Títulos em verde escuro */
-        }
-
         form {
-            background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
+            background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
         }
 
-        form label {
-            color: #1b5e20; /* Labels dos formulários em verde escuro */
+        form label, #livrosLidos h3 {
+            color: #1b5e20;
         }
 
-        form input[type="text"], form textarea, form select {
+        form input[type="text"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
+            border: 1px solid #1b5e20;
             border-radius: 4px;
-            background-color: #ffffff; /* Fundo branco para campos de entrada */
         }
 
         form button {
-            background-color: #4caf50; /* Botão em verde mais vibrante */
+            background-color: #4caf50;
             color: white;
             border: none;
             padding: 10px 20px;
@@ -1194,53 +1235,32 @@ listas de livros lidos
         }
 
         form button:hover {
-            background-color: #388e3c; /* Cor do botão ao passar o mouse */
+            background-color: #388e3c;
         }
 
-        #chatArea {
-            background-color: #e0f2f1; /* Área de mensagens em verde suave */
-            padding: 15px;
-            border: 1px solid #1b5e20; /* Borda em verde escuro */
-            border-radius: 8px;
-            margin-top: 20px;
-            max-height: 300px;
-            overflow-y: auto;
+        #listaLivros {
+            list-style-type: none;
+            padding: 0;
         }
 
-        #chatArea p {
-            background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
+        #listaLivros li {
+            background-color: #a5d6a7;
             padding: 10px;
+            margin: 5px 0;
             border-radius: 5px;
-            margin-bottom: 10px;
             color: #1b5e20;
         }
 
-        .filters, .products {
-            margin: 20px 0;
-        }
+        /* Responsividade */
+        @media (max-width: 768px) {
+            #logo img {
+                width: 80px;
+            }
 
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20; /* Borda em verde escuro para os produtos */
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
-            display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0; /* Fundo dos produtos em verde claro */
-        }
-
-        .product img {
-            max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
-            margin-right: 20px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #1b5e20; /* Título da página em verde escuro */
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
@@ -1259,13 +1279,13 @@ listas de livros lidos
             </ul>
         </nav>
     </header>
+    
     <main>
         <section>
             <h2>Gerencie Suas Listas</h2>
             <form id="livroForm">
                 <label for="livro">Nome do Livro:</label>
                 <input type="text" id="livro" name="livro" required>
-                <br><br>
                 <button type="submit">Adicionar à Lista</button>
             </form>
             <div id="livrosLidos">
@@ -1276,12 +1296,33 @@ listas de livros lidos
             </div>
         </section>
     </main>
+
     <footer>
         <p>&copy; 2024 Meu Site de Livros</p>
     </footer>
+
+    <script>
+        // Adiciona o livro à lista quando o formulário é enviado
+        document.getElementById('livroForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            const livroInput = document.getElementById('livro');
+            const nomeLivro = livroInput.value.trim(); // Obtém o valor e remove espaços em branco
+
+            if (nomeLivro) {
+                const listaLivros = document.getElementById('listaLivros');
+                const novoLivro = document.createElement('li');
+                novoLivro.textContent = nomeLivro;
+
+                listaLivros.appendChild(novoLivro); // Adiciona o livro à lista
+
+                livroInput.value = ''; // Limpa o campo de entrada
+            }
+        });
+    </script>
 </body>
 </html>
- pagina da opinião
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1289,153 +1330,166 @@ listas de livros lidos
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Opinião sobre o Livro</title>
     <style>
+        /* CSS Base */
         body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #e6f4e4; /* Tom de verde claro para o fundo */
-}
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6f4e4;
+        }
 
-header {
-    background-color: #2e7d32; /* Tom de verde escuro para o cabeçalho */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-}
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
 
-nav ul {
-    list-style-type: none;
-    padding: 0;
-}
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+        }
 
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
+        form {
+            background-color: #c8e6c9;
+            padding: 20px;
+            border-radius: 8px;
+            max-width: 600px;
+            margin: auto;
+        }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-}
+        form label {
+            color: #1b5e20;
+            display: block;
+            margin-top: 10px;
+        }
 
-nav ul li a:hover {
-    text-decoration: underline;
-}
+        form input[type="text"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #1b5e20;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
 
-main {
-    padding: 20px;
-    background-color: #f0f8f0; /* Fundo do conteúdo principal em um verde muito claro */
-}
+        form button, form input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
 
-footer {
-    background-color: #2e7d32; /* Cor do rodapé combinando com o cabeçalho */
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-}
+        form button:hover, form input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
 
-h1, h2, h3 {
-    color: #1b5e20; /* Títulos em verde escuro */
-}
+        /* Pré-visualização */
+        #preview {
+            background-color: #f0f8f0;
+            padding: 15px;
+            border: 1px solid #1b5e20;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
 
-form {
-    background-color: #c8e6c9; /* Fundo do formulário em tom suave de verde */
-    padding: 20px;
-    border-radius: 8px;
-}
+        #preview h3 {
+            color: #1b5e20;
+        }
 
-form label {
-    color: #1b5e20; /* Labels dos formulários em verde escuro */
-}
+        /* Responsividade */
+        @media (max-width: 600px) {
+            form {
+                padding: 15px;
+            }
 
-form input[type="text"], form textarea, form select {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #1b5e20; /* Borda dos campos de formulário em verde escuro */
-    border-radius: 4px;
-    background-color: #ffffff; /* Fundo branco para campos de entrada */
-}
-
-form button {
-    background-color: #4caf50; /* Botão em verde mais vibrante */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-form button:hover {
-    background-color: #388e3c; /* Cor do botão ao passar o mouse */
-}
-
-#chatArea {
-    background-color: #e0f2f1; /* Área de mensagens em verde suave */
-    padding: 15px;
-    border: 1px solid #1b5e20; /* Borda em verde escuro */
-    border-radius: 8px;
-    margin-top: 20px;
-    max-height: 300px;
-    overflow-y: auto;
-}
-
-#chatArea p {
-    background-color: #a5d6a7; /* Fundo das mensagens em verde claro */
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    color: #1b5e20;
-}
-
+            form label, form input, form textarea, form select, form button {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <h1>Formulário de Opinião sobre o Livro</h1>
-    <form action="/enviar-opiniao" method="post">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome" name="nome" required><br><br>
-        
-        <label for="titulo">Título do Livro:</label><br>
-        <input type="text" id="titulo" name="titulo" required><br><br>
-        
-        <label for="autor">Autor do Livro:</label><br>
-        <input type="text" id="autor" name="autor" required><br><br>
-        
-        <label for="nota">Nota (1 a 5):</label><br>
+    <header>
+        <h1>Formulário de Opinião sobre o Livro</h1>
+    </header>
+
+    <form id="opiniaoForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="titulo">Título do Livro:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="autor">Autor do Livro:</label>
+        <input type="text" id="autor" name="autor" required>
+
+        <label for="nota">Nota (1 a 5):</label>
         <select id="nota" name="nota" required>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-        </select><br><br>
-        
-        <label for="resumo">Resumo da Sua Opinião:</label><br>
-        <textarea id="resumo" name="resumo" rows="5" cols="40" required></textarea><br><br>
-        
-        <label for="gostou">O que você mais gostou no livro?</label><br>
-        <textarea id="gostou" name="gostou" rows="3" cols="40"></textarea><br><br>
-        
-        <label for="naogostou">O que você menos gostou no livro?</label><br>
-        <textarea id="naogostou" name="naogostou" rows="3" cols="40"></textarea><br><br>
-        
-        <label for="recomendaria">Você recomendaria este livro para outras pessoas?</label><br>
+        </select>
+
+        <label for="resumo">Resumo da Sua Opinião:</label>
+        <textarea id="resumo" name="resumo" rows="5" required></textarea>
+
+        <label for="gostou">O que você mais gostou no livro?</label>
+        <textarea id="gostou" name="gostou" rows="3"></textarea>
+
+        <label for="naogostou">O que você menos gostou no livro?</label>
+        <textarea id="naogostou" name="naogostou" rows="3"></textarea>
+
+        <label>Você recomendaria este livro para outras pessoas?</label>
         <input type="radio" id="sim" name="recomendaria" value="Sim" required>
-        <label for="sim">Sim</label><br>
+        <label for="sim">Sim</label>
         <input type="radio" id="nao" name="recomendaria" value="Não">
-        <label for="nao">Não</label><br><br>
-        
-        <label for="recomendacao">Se sim, para quem você recomendaria?</label><br>
-        <textarea id="recomendacao" name="recomendacao" rows="3" cols="40"></textarea><br><br>
-        
-        <label for="comentarios">Comentários adicionais:</label><br>
-        <textarea id="comentarios" name="comentarios" rows="5" cols="40"></textarea><br><br>
-        
+        <label for="nao">Não</label>
+
+        <label for="recomendacao">Se sim, para quem você recomendaria?</label>
+        <textarea id="recomendacao" name="recomendacao" rows="3"></textarea>
+
+        <label for="comentarios">Comentários adicionais:</label>
+        <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+
+        <button type="button" onclick="previewOpiniao()">Pré-visualizar Opinião</button>
         <input type="submit" value="Enviar Opinião">
     </form>
+
+    <div id="preview" style="display:none;">
+        <h3>Pré-visualização da Opinião:</h3>
+        <p><strong>Nome:</strong> <span id="previewNome"></span></p>
+        <p><strong>Título do Livro:</strong> <span id="previewTitulo"></span></p>
+        <p><strong>Autor do Livro:</strong> <span id="previewAutor"></span></p>
+        <p><strong>Nota:</strong> <span id="previewNota"></span></p>
+        <p><strong>Resumo:</strong> <span id="previewResumo"></span></p>
+        <p><strong>Gostou:</strong> <span id="previewGostou"></span></p>
+        <p><strong>Não Gostou:</strong> <span id="previewNaoGostou"></span></p>
+        <p><strong>Recomendaria:</strong> <span id="previewRecomendaria"></span></p>
+        <p><strong>Recomendação:</strong> <span id="previewRecomendacao"></span></p>
+        <p><strong>Comentários Adicionais:</strong> <span id="previewComentarios"></span></p>
+    </div>
+
+    <script>
+        function previewOpiniao() {
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('previewNome').textContent = document.getElementById('nome').value;
+            document.getElementById('previewTitulo').textContent = document.getElementById('titulo').value;
+            document.getElementById('previewAutor').textContent = document.getElementById('autor').value;
+            document.getElementById('previewNota').textContent = document.getElementById('nota').value;
+            document.getElementById('previewResumo').textContent = document.getElementById('resumo').value;
+            document.getElementById('previewGostou').textContent = document.getElementById('gostou').value;
+            document.getElementById('previewNaoGostou').textContent = document.getElementById('naogostou').value;
+            document.getElementById('previewRecomendaria').textContent = document.querySelector('input[name="recomendaria"]:checked').value;
+            document.getElementById('previewRecomendacao').textContent = document.getElementById('recomendacao').value;
+            document.getElementById('previewComentarios').textContent = document.getElementById('comentarios').value;
+        }
+    </script>
 </body>
 </html>
