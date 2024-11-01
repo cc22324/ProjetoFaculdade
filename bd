@@ -1,0 +1,65 @@
+-- Inserindo livros de categoria 'Box'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(1, 'Box Harry Potter', 'Fantasia', 'J.K. Rowling', 199.99, 10, 'Coleção completa de Harry Potter em edição de luxo.'),
+(2, 'Box O Senhor dos Anéis', 'Fantasia', 'J.R.R. Tolkien', 249.99, 8, 'Trilogia épica de J.R.R. Tolkien em box ilustrado.'),
+(3, 'Box As Crônicas de Nárnia', 'Fantasia', 'C.S. Lewis', 189.99, 12, 'Sete histórias clássicas em um único box.');
+
+-- Inserindo livros de categoria 'Trilogia'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(4, 'Trilogia Jogos Vorazes', 'Ficção Científica', 'Suzanne Collins', 89.99, 15, 'A emocionante trilogia distópica de Jogos Vorazes.'),
+(5, 'Trilogia Divergente', 'Distopia', 'Veronica Roth', 79.99, 10, 'Trilogia de aventura e romance distópico.'),
+(6, 'Trilogia Fundação', 'Ficção Científica', 'Isaac Asimov', 120.00, 5, 'Obra-prima da ficção científica, explorando a fundação de um novo império.');
+
+-- Inserindo livros de categoria 'Duologia'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(7, 'Duologia Six of Crows', 'Fantasia', 'Leigh Bardugo', 69.99, 8, 'História de ação e intriga com personagens inesquecíveis.'),
+(8, 'Duologia O Ceifador', 'Distopia', 'Neal Shusterman', 74.99, 7, 'História sobre uma sociedade onde a morte foi vencida.'),
+(9, 'Duologia Mentes Sombrias', 'Ficção Científica', 'Alexandra Bracken', 64.99, 6, 'História eletrizante de jovens com poderes extraordinários.');
+
+-- Inserindo livros de categoria 'Standalone' (livro único)
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(10, 'O Alquimista', 'Ficção Filosófica', 'Paulo Coelho', 29.99, 20, 'Um conto sobre autodescoberta e busca por sonhos.'),
+(11, 'A Menina que Roubava Livros', 'Histórico', 'Markus Zusak', 39.99, 15, 'História comovente ambientada na Alemanha nazista.'),
+(12, 'O Código Da Vinci', 'Mistério', 'Dan Brown', 49.99, 12, 'Thriller de mistério envolvendo símbolos religiosos e segredos antigos.');
+
+-- Inserindo mais livros na categoria 'Box'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(13, 'Box Percy Jackson e os Olimpianos', 'Fantasia', 'Rick Riordan', 199.99, 10, 'Box completo da série Percy Jackson e os Olimpianos.'),
+(14, 'Box Sherlock Holmes', 'Mistério', 'Arthur Conan Doyle', 149.99, 7, 'Histórias completas do detetive Sherlock Holmes.'),
+(15, 'Box Millennium', 'Thriller', 'Stieg Larsson', 179.99, 6, 'Trilogia de mistério e suspense com Lisbeth Salander.');
+
+-- Inserindo mais livros na categoria 'Trilogia'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(16, 'Trilogia Fronteiras do Universo', 'Fantasia', 'Philip Pullman', 109.99, 8, 'História épica de fantasia envolvendo mundos paralelos.'),
+(17, 'Trilogia O Teste', 'Distopia', 'Joelle Charbonneau', 89.99, 6, 'Uma distopia onde apenas os melhores são escolhidos.'),
+(18, 'Trilogia A Seleção', 'Romance Distópico', 'Kiera Cass', 99.99, 10, 'Trilogia de romance e disputa pela coroa.');
+
+-- Inserindo mais livros na categoria 'Duologia'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(19, 'Duologia Illuminae', 'Ficção Científica', 'Amie Kaufman e Jay Kristoff', 74.99, 5, 'História contada em formato de dossiês e mensagens de texto.'),
+(20, 'Duologia Strange the Dreamer', 'Fantasia', 'Laini Taylor', 69.99, 4, 'Fantasia lírica sobre sonhos e aventuras em terras exóticas.'),
+(21, 'Duologia A Fúria e a Aurora', 'Romance', 'Renée Ahdieh', 59.99, 7, 'Releitura do conto das Mil e Uma Noites.');
+
+-- Inserindo mais livros na categoria 'Standalone'
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(22, '1984', 'Distopia', 'George Orwell', 39.99, 15, 'Clássico sobre uma sociedade totalitária.'),
+(23, 'A Revolução dos Bichos', 'Satírico', 'George Orwell', 29.99, 18, 'Alegoria política em uma fábula de animais.'),
+(24, 'Orgulho e Preconceito', 'Romance Clássico', 'Jane Austen', 34.99, 10, 'Romance clássico sobre costumes e relacionamentos.'),
+(25, 'O Conto da Aia', 'Distopia', 'Margaret Atwood', 44.99, 8, 'Distopia sobre a opressão das mulheres em uma sociedade teocrática.'),
+(26, 'O Morro dos Ventos Uivantes', 'Romance Gótico', 'Emily Brontë', 39.99, 9, 'História sombria e apaixonante de amor e vingança.');
+INSERT INTO Livaria.Livros (id, titulo, genero, autor, preco, estoque, descricao) 
+VALUES 
+(27,'Romeu e Julieta','Romance trágico', 'Willian Shakespeare',34.30, 'História de aamor entre familias inimigas');
+(28,'A Culap é das Estrelas','Romance','Jhon Green',39.90, ' narra o romance de dois adolescentes que se conhecem e se apaixonam em um Grupo de Apoio para Crianças com Câncer ');
+(29,'Diário de Anne Frank', 'Bibliografia','Anne Frank',29.90,'A história narra a trgetória de uma jovem durante a opressão naista e o holocausto')
+(30,'Daisy Jones & The Six','Romance','Taylor Jenkins Reid',33.91,'O livro nada mais é do que um documentário que nos conta de que forma a rebelde e ousada Daisy Jones teve seu caminho atrelado aos The Six.')
+
+ SELECT * FROM Livaria.Livros
