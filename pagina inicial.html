@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -51,6 +51,7 @@
         main {
             padding: 20px;
             background-color: #f0f8f0;
+            text-align: center;
         }
 
         footer {
@@ -64,84 +65,47 @@
             color: #1b5e20;
         }
 
-        form {
-            background-color: #c8e6c9;
-            padding: 20px;
-            border-radius: 8px;
-            max-width: 600px;
-            margin: auto;
-        }
-
-        form label {
+        /* Estilo para o texto de apresentação */
+        section h2 {
+            font-size: 2em;
             color: #1b5e20;
+            font-family: 'Brush Script MT', cursive;
         }
 
-        form input[type="text"], form textarea, form select {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #1b5e20;
-            border-radius: 4px;
-            background-color: #ffffff;
+        section p {
+            font-size: 1.5em;
+            color: #3a3a3a;
+            font-family: 'Brush Script MT', cursive;
         }
 
-        form button {
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background-color: #388e3c;
-        }
-
-        #chatArea {
-            background-color: #e0f2f1;
-            padding: 15px;
-            border: 1px solid #1b5e20;
-            border-radius: 8px;
-            margin-top: 20px;
-            max-height: 300px;
-            overflow-y: auto;
-        }
-
-        #chatArea p {
-            background-color: #a5d6a7;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            color: #1b5e20;
-        }
-
-        .filters, .products {
-            margin: 20px 0;
-        }
-
-        .filter-item {
-            margin-bottom: 10px;
-        }
-
-        .product {
-            border: 1px solid #1b5e20;
-            border-radius: 5px;
-            padding: 10px;
-            margin: 10px 0;
+        /* Estilo do carrossel */
+        .carousel {
             display: flex;
-            align-items: flex-start;
-            background-color: #f0f8f0;
-            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            margin: 40px auto;
+            padding: 40px;
+            max-width: 80%;
+            background-color: #c8e6c9;
+            border-radius: 15px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+            font-size: 1.5em;
+            font-family: 'Brush Script MT', cursive;
+            color: #1b5e20;
+            position: relative;
+            height: 100px;
         }
 
-        .product img {
-            max-width: 100px;
-            margin-right: 20px;
-        }
-
-        h1 {
+        .carousel p {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+            position: absolute;
+            width: 100%;
             text-align: center;
+        }
+
+        .carousel p.active {
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
@@ -154,9 +118,9 @@
                 align-items: center;
             }
 
-            .product {
-                flex-direction: column;
-                align-items: center;
+            .carousel {
+                padding: 20px;
+                font-size: 1.2em;
             }
         }
     </style>
@@ -188,25 +152,39 @@
                 pessoas que leram os mesmos títulos que você.
             </p>
         </section>
+
+        <!-- Carrossel de frases -->
+        <div class="carousel">
+            <p class="active">“Tu te tornas eternamente responsável por aquilo que cativas”</p>
+            <p>“Todos temos luz e trevas dentro de nós, o que importa é o lado do qual decidimos agir”</p>
+            <p>“Vá em frente com o que seu coração lhe diz, ou você vai perder tudo.”</p>
+            <p>“Acho que, se a gente pudesse correr sem nunca se cansar, nunca mais iria querer parar. Mas às vezes existem razões muito especiais para se parar.”</p>
+            <p>“Aqui você é livre para ser quem é!”</p>
+            <p>“Se eu pudesse fazer tudo do zero, não mudaria nada, porque tudo o que aconteceu nos trouxe até aqui.”</p>
+        </div>
     </main>
     <footer>
         <p>&copy; Book Net</p>
     </footer>
 
     <script>
-        // Exemplo de JavaScript para interatividade
+        // Função para controlar o carrossel de frases
         document.addEventListener("DOMContentLoaded", function() {
-            const navLinks = document.querySelectorAll("nav ul li a");
-            navLinks.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    alert(`Você clicou em ${link.innerText}`);
-                });
-            });
+            const phrases = document.querySelectorAll(".carousel p");
+            let index = 0;
+
+            function showNextPhrase() {
+                phrases[index].classList.remove("active");
+                index = (index + 1) % phrases.length;
+                phrases[index].classList.add("active");
+            }
+
+            setInterval(showNextPhrase, 3000); // Muda a frase a cada 3 segundos
         });
     </script>
 </body>
 </html>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
