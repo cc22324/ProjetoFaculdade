@@ -16,15 +16,13 @@
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            padding: 10px;
+            text-align: center;
+            flex-direction: column;
         }
 
         #logo {
-            margin-left: 20px;
+            margin-bottom: 10px;
         }
 
         nav ul {
@@ -32,11 +30,12 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            align-items: center;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 5px 0;
         }
 
         nav ul li a {
@@ -67,13 +66,13 @@
 
         /* Estilo para o texto de apresentação */
         section h2 {
-            font-size: 2em;
+            font-size: 1.8em;
             color: #1b5e20;
             font-family: 'Brush Script MT', cursive;
         }
 
         section p {
-            font-size: 1.5em;
+            font-size: 1.2em;
             color: #3a3a3a;
             font-family: 'Brush Script MT', cursive;
         }
@@ -83,17 +82,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            margin: 40px auto;
-            padding: 40px;
-            max-width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            width: 100%;
             background-color: #c8e6c9;
             border-radius: 15px;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-            font-size: 1.5em;
+            font-size: 1.2em;
             font-family: 'Brush Script MT', cursive;
             color: #1b5e20;
             position: relative;
-            height: 100px;
+            height: 80px;
         }
 
         .carousel p {
@@ -108,19 +107,41 @@
             opacity: 1;
         }
 
-        @media (max-width: 768px) {
-            header, main, footer {
-                text-align: center;
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                text-align: left;
+            }
+
+            #logo {
+                margin-left: 20px;
             }
 
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+            }
+
+            nav ul li {
+                margin: 0 10px;
             }
 
             .carousel {
-                padding: 20px;
-                font-size: 1.2em;
+                max-width: 80%;
+                padding: 40px;
+                font-size: 1.5em;
+                height: 100px;
+            }
+
+            section h2 {
+                font-size: 2em;
+            }
+
+            section p {
+                font-size: 1.5em;
             }
         }
     </style>
@@ -202,89 +223,99 @@
             flex-direction: column;
             min-height: 100vh;
         }
-        
+
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        
-        #logo img {
-            width: 100px;
-            margin: 0 20px;
-        }
-        
-        h1 {
+            padding: 10px;
             text-align: center;
-            margin: 0;
-            font-size: 24px;
         }
-        
+
+        #logo img {
+            width: 80px;
+        }
+
+        h1 {
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
         .content {
+            padding: 10px;
             display: flex;
-            flex: 1;
-            padding: 20px;
+            flex-direction: column;
             gap: 20px;
-            flex-wrap: wrap;
         }
-        
+
         .filters {
-            flex: 1 1 250px;
             background-color: #f0f8f0;
             padding: 20px;
             border-radius: 8px;
-            max-width: 300px;
         }
-        
+
         .products {
-            flex: 3 1 500px;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            grid-gap: 20px;
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
-        
-        .filter-item {
-            margin-bottom: 20px;
-        }
-        
+
         .product {
             border: 1px solid #1b5e20;
             border-radius: 5px;
             padding: 10px;
             background-color: #f0f8f0;
             text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
-        
+
         .product img {
-            max-width: 150px;
+            max-width: 100px;
             margin-bottom: 10px;
         }
-        
+
         footer {
             background-color: #2e7d32;
             color: #fff;
             text-align: center;
-            padding: 5px 0;
+            padding: 10px;
             font-size: 12px;
-            position: relative;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            .content {
-                flex-direction: column;
-                padding: 10px;
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
             }
 
-            header, footer {
-                text-align: center;
+            #logo img {
+                width: 100px;
+                margin-right: 20px;
+            }
+
+            h1 {
+                font-size: 24px;
+                margin: 0;
+            }
+
+            .content {
+                flex-direction: row;
+                padding: 20px;
+            }
+
+            .filters {
+                flex: 1;
+                max-width: 300px;
+            }
+
+            .products {
+                flex: 3;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+
+            .product img {
+                max-width: 150px;
             }
         }
     </style>
@@ -386,32 +417,32 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #e6f4e4;
         }
 
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 10px;
+            text-align: center;
         }
 
-        #logo {
-            margin-left: 20px;
+        #logo img {
+            width: 80px;
+            margin-bottom: 10px;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         nav ul li {
-            display: inline;
-            margin: 0 10px;
+            display: inline-block;
         }
 
         nav ul li a {
@@ -419,23 +450,10 @@
             text-decoration: none;
         }
 
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
         main {
-            padding: 20px;
             background-color: #f0f8f0;
-        }
-
-        footer {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            padding: 10px;
+            border-radius: 5px;
         }
 
         h2, .total {
@@ -450,22 +468,28 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-direction: column;
             background-color: #f0f8f0;
         }
 
+        .cart-item div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
         .cart-item input[type="number"] {
-            width: 50px;
-            margin-left: 10px;
+            width: 60px;
         }
 
         .checkout-button {
             background-color: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 20px;
+            width: 100%;
         }
 
         .checkout-button:hover {
@@ -475,13 +499,60 @@
         .total {
             font-weight: bold;
             margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+
+            #logo img {
+                width: 100px;
+                margin: 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                margin: 0;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .cart-item {
+                flex-direction: row;
+            }
+
+            .checkout-button {
+                width: auto;
+                margin-top: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
         <nav>
             <ul>
@@ -569,38 +640,37 @@
     <title>Comentários</title>
     <link rel="stylesheet" href="styles.css">
     <style>
-        /* Estilos base */
+        /* Estilos base para mobile first */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #e6f4e4;
         }
 
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            padding: 10px;
+            text-align: center;
         }
 
-        #logo {
-            margin-left: 20px;
+        #logo img {
+            width: 80px;
+            margin-bottom: 10px;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 0;
         }
 
         nav ul li a {
@@ -613,18 +683,9 @@
         }
 
         main {
-            padding: 20px;
+            padding: 10px;
             background-color: #f0f8f0;
-        }
-
-        footer {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-radius: 5px;
         }
 
         h1, h2 {
@@ -640,6 +701,7 @@
 
         form label {
             color: #1b5e20;
+            font-weight: bold;
         }
 
         form input[type="text"], form textarea {
@@ -655,9 +717,10 @@
             background-color: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
         }
 
         form button:hover {
@@ -683,19 +746,45 @@
             color: #1b5e20;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header, nav ul {
-                flex-direction: column;
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
                 align-items: center;
-            }
-            
-            main {
-                padding: 10px;
+                padding: 10px 20px;
+                text-align: left;
             }
 
             #logo img {
-                width: 80px;
+                width: 100px;
+                margin: 0;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 15px;
+                margin: 0;
+                text-align: left;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            form button {
+                width: auto;
             }
         }
     </style>
@@ -703,7 +792,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
         <nav>
             <ul>
@@ -765,6 +854,7 @@
 </body>
 </html>
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -773,37 +863,32 @@
     <title>Grupo de Leitura</title>
     <link rel="stylesheet" href="styles.css">
     <style>
+        /* Estilos base para mobile first */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px;
             background-color: #e6f4e4;
         }
 
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            padding: 10px;
+            text-align: center;
         }
 
-        #logo {
-            margin-left: 20px;
+        #logo img {
+            width: 80px;
         }
 
         nav ul {
             list-style-type: none;
             padding: 0;
-            margin: 0;
             display: flex;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 10px;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
         }
 
         nav ul li a {
@@ -816,18 +901,9 @@
         }
 
         main {
-            padding: 20px;
+            padding: 10px;
             background-color: #f0f8f0;
-        }
-
-        footer {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-radius: 5px;
         }
 
         h1, h2 {
@@ -836,12 +912,13 @@
 
         form {
             background-color: #c8e6c9;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
         }
 
         form label {
             color: #1b5e20;
+            font-weight: bold;
         }
 
         form input[type="text"], form textarea {
@@ -857,9 +934,10 @@
             background-color: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
         }
 
         form button:hover {
@@ -868,7 +946,7 @@
 
         #chatArea {
             background-color: #e0f2f1;
-            padding: 15px;
+            padding: 10px;
             border: 1px solid #1b5e20;
             border-radius: 8px;
             margin-top: 20px;
@@ -884,19 +962,42 @@
             color: #1b5e20;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            header, nav ul {
-                flex-direction: column;
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Ajustes para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 20px;
                 align-items: center;
-            }
-            
-            main {
-                padding: 10px;
+                text-align: left;
             }
 
             #logo img {
-                width: 80px;
+                width: 100px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            form button {
+                width: auto;
             }
         }
     </style>
@@ -904,7 +1005,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
         <nav>
             <ul>
@@ -979,6 +1080,7 @@
 </body>
 </html>
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -986,10 +1088,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Lista de Livros Desejados</title>
     <style>
+        /* Estilos Mobile First */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background-color: #e6f4e4;
         }
 
@@ -997,38 +1100,44 @@
             background-color: #2e7d32;
             color: #fff;
             padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            text-align: center;
         }
 
-        #logo {
-            margin-left: 20px;
+        #logo img {
+            width: 80px;
         }
 
         h1 {
             text-align: center;
             color: #1b5e20;
+            font-size: 1.5em;
+            margin-top: 15px;
         }
 
         form {
             background-color: #c8e6c9;
             padding: 20px;
             border-radius: 8px;
+            margin: 15px auto;
+            width: 100%;
             max-width: 600px;
-            margin: auto;
+            box-sizing: border-box;
         }
 
         form label {
             color: #1b5e20;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
         }
 
         form input[type="text"], form input[type="email"], form textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin-top: 5px;
             border: 1px solid #1b5e20;
             border-radius: 4px;
+            box-sizing: border-box;
         }
 
         form button, form input[type="submit"] {
@@ -1038,7 +1147,9 @@
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
-            margin-top: 10px;
+            width: 100%;
+            font-size: 1em;
+            margin-top: 15px;
         }
 
         form button:hover, form input[type="submit"]:hover {
@@ -1049,14 +1160,23 @@
             margin-bottom: 20px;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
-            form {
-                padding: 15px;
+        /* Ajustes para telas maiores */
+        @media (min-width: 768px) {
+            #logo img {
+                width: 100px;
             }
 
-            #logo img {
-                width: 80px;
+            h1 {
+                font-size: 2em;
+            }
+
+            form {
+                padding: 25px;
+            }
+
+            form button, form input[type="submit"] {
+                width: auto;
+                display: inline-block;
             }
         }
     </style>
@@ -1064,7 +1184,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100">
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
     </header>
 
@@ -1085,10 +1205,10 @@
             </div>
         </div>
 
-        <button type="button" onclick="adicionarLivro()">Adicionar Mais Livros</button><br><br>
+        <button type="button" onclick="adicionarLivro()">Adicionar Mais Livros</button>
 
         <label for="observacoes">Alguma observação sobre sua lista de desejos?</label><br>
-        <textarea id="observacoes" name="observacoes" rows="5"></textarea><br><br>
+        <textarea id="observacoes" name="observacoes" rows="5"></textarea>
 
         <input type="submit" value="Enviar Lista">
     </form>
@@ -1114,6 +1234,7 @@
 </body>
 </html>
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1121,26 +1242,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minhas Listas</title>
     <style>
-        /* CSS Base */
+        /* Estilos Mobile First */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background-color: #e6f4e4;
         }
 
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
+            padding: 10px;
+            text-align: center;
         }
 
-        #logo {
-            margin-left: 20px;
+        #logo img {
+            width: 80px;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            color: #fff;
+            margin: 10px 0;
         }
 
         nav ul {
@@ -1148,59 +1272,59 @@
             padding: 0;
             margin: 0;
             display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         nav ul li {
-            margin: 0 10px;
+            margin: 5px 0;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
+            font-size: 1em;
         }
 
         nav ul li a:hover {
             text-decoration: underline;
         }
 
-        h1 {
+        main {
+            padding: 15px;
+            background-color: #f0f8f0;
+            border-radius: 8px;
+            margin: 15px auto;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
             text-align: center;
             color: #1b5e20;
-        }
-
-        main {
-            padding: 20px;
-            background-color: #f0f8f0;
-            max-width: 800px;
-            margin: auto;
-        }
-
-        footer {
-            background-color: #2e7d32;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            font-size: 1.2em;
         }
 
         form {
             background-color: #c8e6c9;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
+            margin: 15px 0;
         }
 
         form label, #livrosLidos h3 {
             color: #1b5e20;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
         }
 
         form input[type="text"] {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
             border: 1px solid #1b5e20;
             border-radius: 4px;
+            box-sizing: border-box;
         }
 
         form button {
@@ -1210,10 +1334,17 @@
             padding: 10px 20px;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1em;
         }
 
         form button:hover {
             background-color: #388e3c;
+        }
+
+        #livrosLidos {
+            margin-top: 20px;
         }
 
         #listaLivros {
@@ -1229,15 +1360,39 @@
             color: #1b5e20;
         }
 
-        /* Responsividade */
-        @media (max-width: 768px) {
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+
+        /* Ajustes para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+
             #logo img {
-                width: 80px;
+                width: 100px;
             }
 
             nav ul {
-                flex-direction: column;
-                align-items: center;
+                flex-direction: row;
+            }
+
+            main {
+                padding: 20px;
+                max-width: 600px;
+            }
+
+            form button {
+                width: auto;
+                display: inline-block;
             }
         }
     </style>
@@ -1245,7 +1400,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+            <img src="logo.jpg" alt="Logo da Livraria">
         </div>
         <h1>Minhas Listas de Livros</h1>
         <nav>
@@ -1301,6 +1456,7 @@
 </body>
 </html>
 
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -1308,11 +1464,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Opinião sobre o Livro</title>
     <style>
-        /* CSS Base */
+        /* Estilos base para mobile */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 15px;
             background-color: #e6f4e4;
         }
 
@@ -1324,22 +1480,26 @@
         }
 
         h1 {
-            text-align: center;
-            color: #1b5e20;
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #fff;
         }
 
         form {
             background-color: #c8e6c9;
-            padding: 20px;
+            padding: 15px;
             border-radius: 8px;
-            max-width: 600px;
             margin: auto;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
         }
 
         form label {
             color: #1b5e20;
-            display: block;
+            font-weight: bold;
             margin-top: 10px;
+            display: block;
         }
 
         form input[type="text"],
@@ -1347,9 +1507,10 @@
         form textarea {
             width: 100%;
             padding: 10px;
-            margin: 10px 0;
+            margin-top: 5px;
             border: 1px solid #1b5e20;
             border-radius: 4px;
+            box-sizing: border-box;
             background-color: #ffffff;
         }
 
@@ -1357,9 +1518,12 @@
             background-color: #4caf50;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 4px;
             cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1em;
         }
 
         form button:hover, form input[type="submit"]:hover {
@@ -1373,20 +1537,24 @@
             border: 1px solid #1b5e20;
             border-radius: 8px;
             margin-top: 20px;
+            display: none;
         }
 
         #preview h3 {
             color: #1b5e20;
+            margin-bottom: 10px;
         }
 
-        /* Responsividade */
-        @media (max-width: 600px) {
+        /* Estilos para telas maiores */
+        @media (min-width: 600px) {
             form {
-                padding: 15px;
+                max-width: 500px;
+                padding: 20px;
             }
 
-            form label, form input, form textarea, form select, form button {
-                font-size: 0.9rem;
+            form button, form input[type="submit"] {
+                width: auto;
+                display: inline-block;
             }
         }
     </style>
@@ -1440,7 +1608,7 @@
         <input type="submit" value="Enviar Opinião">
     </form>
 
-    <div id="preview" style="display:none;">
+    <div id="preview">
         <h3>Pré-visualização da Opinião:</h3>
         <p><strong>Nome:</strong> <span id="previewNome"></span></p>
         <p><strong>Título do Livro:</strong> <span id="previewTitulo"></span></p>
