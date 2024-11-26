@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupo de Leitura</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos base para mobile first */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #e6f4e4;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #logo img {
+            width: 80px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            align-items: center;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 10px;
+            background-color: #f0f8f0;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            color: #1b5e20;
+        }
+
+        form {
+            background-color: #c8e6c9;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        form label {
+            color: #1b5e20;
+            font-weight: bold;
+        }
+
+        form input[type="text"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #1b5e20;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        form button:hover {
+            background-color: #388e3c;
+        }
+
+        #chatArea {
+            background-color: #e0f2f1;
+            padding: 10px;
+            border: 1px solid #1b5e20;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #chatArea p {
+            background-color: #a5d6a7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #1b5e20;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Ajustes para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                padding: 15px 20px;
+                align-items: center;
+                text-align: left;
+            }
+
+            #logo img {
+                width: 100px;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 15px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            form button {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="logo.jpg" alt="Logo da Livraria">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+                <li><a href="grupo-leitura.html">Grupo de Leitura</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Participe da Discussão!</h2>
+            <p>Converse com outros leitores sobre os livros que você leu ou compartilhe sua opinião sobre os livros mais recentes!</p>
+
+            <!-- Formulário para envio de mensagem -->
+            <form id="chatForm">
+                <label for="nome">Seu Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+
+                <label for="livro">Título do Livro:</label>
+                <input type="text" id="livro" name="livro" required>
+
+                <label for="mensagem">Sua Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+
+            <!-- Área onde as mensagens são exibidas -->
+            <h3>Mensagens Recentes:</h3>
+            <div id="chatArea">
+                <!-- As mensagens do grupo de leitura aparecerão aqui -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+
+    <script>
+        // JavaScript para enviar e exibir mensagens
+        const chatForm = document.getElementById('chatForm');
+        const chatArea = document.getElementById('chatArea');
+
+        // Função para adicionar uma nova mensagem
+        function addMessage(event) {
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Coleta os valores dos campos
+            const nome = document.getElementById('nome').value;
+            const livro = document.getElementById('livro').value;
+            const mensagem = document.getElementById('mensagem').value;
+
+            // Cria um novo parágrafo para exibir a mensagem
+            const newMessage = document.createElement('p');
+            newMessage.textContent = `${nome} sobre "${livro}": ${mensagem}`;
+
+            // Adiciona a nova mensagem à área de mensagens
+            chatArea.appendChild(newMessage);
+
+            // Limpa o formulário após o envio
+            chatForm.reset();
+        }
+
+        // Adiciona o evento de submissão ao formulário
+        chatForm.addEventListener('submit', addMessage);
+    </script>
+</body>
+</html>

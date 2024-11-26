@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Opinião sobre o Livro</title>
+    <style>
+        /* Estilos base para mobile */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #e6f4e4;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 1.5em;
+            margin: 10px 0;
+            color: #fff;
+        }
+
+        form {
+            background-color: #c8e6c9;
+            padding: 15px;
+            border-radius: 8px;
+            margin: auto;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        form label {
+            color: #1b5e20;
+            font-weight: bold;
+            margin-top: 10px;
+            display: block;
+        }
+
+        form input[type="text"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #1b5e20;
+            border-radius: 4px;
+            box-sizing: border-box;
+            background-color: #ffffff;
+        }
+
+        form button, form input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 1em;
+        }
+
+        form button:hover, form input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+
+        /* Pré-visualização */
+        #preview {
+            background-color: #f0f8f0;
+            padding: 15px;
+            border: 1px solid #1b5e20;
+            border-radius: 8px;
+            margin-top: 20px;
+            display: none;
+        }
+
+        #preview h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        /* Estilos para telas maiores */
+        @media (min-width: 600px) {
+            form {
+                max-width: 500px;
+                padding: 20px;
+            }
+
+            form button, form input[type="submit"] {
+                width: auto;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Formulário de Opinião sobre o Livro</h1>
+    </header>
+
+    <form id="opiniaoForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="titulo">Título do Livro:</label>
+        <input type="text" id="titulo" name="titulo" required>
+
+        <label for="autor">Autor do Livro:</label>
+        <input type="text" id="autor" name="autor" required>
+
+        <label for="nota">Nota (1 a 5):</label>
+        <select id="nota" name="nota" required>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+
+        <label for="resumo">Resumo da Sua Opinião:</label>
+        <textarea id="resumo" name="resumo" rows="5" required></textarea>
+
+        <label for="gostou">O que você mais gostou no livro?</label>
+        <textarea id="gostou" name="gostou" rows="3"></textarea>
+
+        <label for="naogostou">O que você menos gostou no livro?</label>
+        <textarea id="naogostou" name="naogostou" rows="3"></textarea>
+
+        <label>Você recomendaria este livro para outras pessoas?</label>
+        <input type="radio" id="sim" name="recomendaria" value="Sim" required>
+        <label for="sim">Sim</label>
+        <input type="radio" id="nao" name="recomendaria" value="Não">
+        <label for="nao">Não</label>
+
+        <label for="recomendacao">Se sim, para quem você recomendaria?</label>
+        <textarea id="recomendacao" name="recomendacao" rows="3"></textarea>
+
+        <label for="comentarios">Comentários adicionais:</label>
+        <textarea id="comentarios" name="comentarios" rows="5"></textarea>
+
+        <button type="button" onclick="previewOpiniao()">Pré-visualizar Opinião</button>
+        <input type="submit" value="Enviar Opinião">
+    </form>
+
+    <div id="preview">
+        <h3>Pré-visualização da Opinião:</h3>
+        <p><strong>Nome:</strong> <span id="previewNome"></span></p>
+        <p><strong>Título do Livro:</strong> <span id="previewTitulo"></span></p>
+        <p><strong>Autor do Livro:</strong> <span id="previewAutor"></span></p>
+        <p><strong>Nota:</strong> <span id="previewNota"></span></p>
+        <p><strong>Resumo:</strong> <span id="previewResumo"></span></p>
+        <p><strong>Gostou:</strong> <span id="previewGostou"></span></p>
+        <p><strong>Não Gostou:</strong> <span id="previewNaoGostou"></span></p>
+        <p><strong>Recomendaria:</strong> <span id="previewRecomendaria"></span></p>
+        <p><strong>Recomendação:</strong> <span id="previewRecomendacao"></span></p>
+        <p><strong>Comentários Adicionais:</strong> <span id="previewComentarios"></span></p>
+    </div>
+
+    <script>
+        function previewOpiniao() {
+            document.getElementById('preview').style.display = 'block';
+            document.getElementById('previewNome').textContent = document.getElementById('nome').value;
+            document.getElementById('previewTitulo').textContent = document.getElementById('titulo').value;
+            document.getElementById('previewAutor').textContent = document.getElementById('autor').value;
+            document.getElementById('previewNota').textContent = document.getElementById('nota').value;
+            document.getElementById('previewResumo').textContent = document.getElementById('resumo').value;
+            document.getElementById('previewGostou').textContent = document.getElementById('gostou').value;
+            document.getElementById('previewNaoGostou').textContent = document.getElementById('naogostou').value;
+            document.getElementById('previewRecomendaria').textContent = document.querySelector('input[name="recomendaria"]:checked').value;
+            document.getElementById('previewRecomendacao').textContent = document.getElementById('recomendacao').value;
+            document.getElementById('previewComentarios').textContent = document.getElementById('comentarios').value;
+        }
+    </script>
+</body>
+</html>

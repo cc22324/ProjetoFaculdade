@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comentários</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos base para mobile first */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #e6f4e4;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #logo img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            text-align: center;
+        }
+
+        nav ul li {
+            margin: 0;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 10px;
+            background-color: #f0f8f0;
+            border-radius: 5px;
+        }
+
+        h1, h2 {
+            color: #1b5e20;
+        }
+
+        /* Estilo do formulário */
+        form {
+            background-color: #c8e6c9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        form label {
+            color: #1b5e20;
+            font-weight: bold;
+        }
+
+        form input[type="text"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #1b5e20;
+            border-radius: 4px;
+            background-color: #ffffff;
+        }
+
+        form button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        form button:hover {
+            background-color: #388e3c;
+        }
+
+        /* Área de comentários */
+        #chatArea {
+            background-color: #e0f2f1;
+            padding: 15px;
+            border: 1px solid #1b5e20;
+            border-radius: 8px;
+            margin-top: 20px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        #chatArea p {
+            background-color: #a5d6a7;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            color: #1b5e20;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+                text-align: left;
+            }
+
+            #logo img {
+                width: 100px;
+                margin: 0;
+            }
+
+            nav ul {
+                flex-direction: row;
+                gap: 15px;
+                margin: 0;
+                text-align: left;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            form button {
+                width: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="logo.jpg" alt="Logo da Livraria">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="compras.html">Compras Online</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Compartilhe Suas Opiniões</h2>
+            <form id="commentForm">
+                <label for="livro">Nome do Livro:</label>
+                <input type="text" id="livro" name="livro" required>
+                <label for="comentario">Seu Comentário:</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+                <button type="submit">Enviar Comentário</button>
+            </form>
+
+            <!-- Área para exibir os comentários -->
+            <div id="chatArea">
+                <h3>Comentários:</h3>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+
+    <script>
+        // Seleciona o formulário e o container de comentários
+        const commentForm = document.getElementById('commentForm');
+        const chatArea = document.getElementById('chatArea');
+
+        // Função para adicionar um comentário
+        function addComment(event) {
+            event.preventDefault(); // Impede o envio do formulário
+
+            // Coleta dados do formulário
+            const livro = document.getElementById('livro').value;
+            const comentario = document.getElementById('comentario').value;
+
+            // Cria um novo elemento de parágrafo para o comentário
+            const newComment = document.createElement('p');
+            newComment.textContent = `Livro: ${livro} - Comentário: ${comentario}`;
+
+            // Adiciona o comentário na área de comentários
+            chatArea.appendChild(newComment);
+
+            // Limpa o formulário
+            commentForm.reset();
+        }
+
+        // Adiciona um evento ao formulário para enviar comentários
+        commentForm.addEventListener('submit', addComment);
+    </script>
+</body>
+</html>

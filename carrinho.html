@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho de Compras</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 10px;
+            background-color: #e6f4e4;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #logo img {
+            width: 80px;
+            margin-bottom: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        nav ul li {
+            display: inline-block;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            background-color: #f0f8f0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        h2, .total {
+            color: #1b5e20;
+        }
+
+        .cart-item {
+            border: 1px solid #1b5e20;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+            background-color: #f0f8f0;
+        }
+
+        .cart-item div {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cart-item input[type="number"] {
+            width: 60px;
+        }
+
+        .checkout-button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .checkout-button:hover {
+            background-color: #388e3c;
+        }
+
+        .total {
+            font-weight: bold;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #2e7d32;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Estilos para telas maiores */
+        @media (min-width: 768px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+
+            #logo img {
+                width: 100px;
+                margin: 0;
+            }
+
+            nav ul {
+                display: flex;
+                flex-direction: row;
+                gap: 15px;
+                margin: 0;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .cart-item {
+                flex-direction: row;
+            }
+
+            .checkout-button {
+                width: auto;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="logo.jpg" alt="Logo da Livraria">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="carrinho.html">Carrinho</a></li>
+                <li><a href="comentarios.html">Comentários</a></li>
+                <li><a href="listas.html">Minhas Listas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Seu Carrinho de Compras</h2>
+
+        <div class="cart-item" data-price="50">
+            <span>Livro A</span>
+            <div>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
+            </div>
+        </div>
+
+        <div class="cart-item" data-price="30">
+            <span>Livro B</span>
+            <div>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
+            </div>
+        </div>
+
+        <div class="cart-item" data-price="20">
+            <span>Livro C</span>
+            <div>
+                <input type="number" class="quantity" value="1" min="1"> 
+                <button class="remove-button">Remover</button>
+            </div>
+        </div>
+
+        <div class="total">Total: R$ <span id="total-price">100,00</span></div>
+        <button class="checkout-button">Finalizar Compra</button>
+    </main>
+    <footer>
+        <p>&copy; 2024 Meu Site de Livros</p>
+    </footer>
+
+    <script>
+        // Função para atualizar o preço total
+        function updateTotal() {
+            let total = 0;
+            const cartItems = document.querySelectorAll('.cart-item');
+            
+            cartItems.forEach(item => {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('.quantity').value);
+                total += price * quantity;
+            });
+            
+            document.getElementById('total-price').textContent = total.toFixed(2);
+        }
+
+        // Atualizar total ao mudar quantidade
+        document.querySelectorAll('.quantity').forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+
+        // Remover item do carrinho
+        document.querySelectorAll('.remove-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const item = this.closest('.cart-item');
+                item.remove();
+                updateTotal(); // Atualizar o total após remover o item
+            });
+        });
+
+        // Atualizar total ao carregar a página
+        updateTotal();
+    </script>
+</body>
+</html>
