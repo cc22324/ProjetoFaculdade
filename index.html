@@ -1,41 +1,50 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Site de Livros</title>
-    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             background-color: #e6f4e4;
         }
 
         header {
             background-color: #2e7d32;
             color: #fff;
-            padding: 10px;
-            text-align: center;
-            flex-direction: column;
-        }
-
-        #logo {
-            margin-bottom: 10px;
-        }
-
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
             display: flex;
-            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        #header-left {
+            display: flex;
             align-items: center;
         }
 
+        #logo img {
+            width: 80px;
+            margin-right: 15px;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
         nav ul li {
-            margin: 5px 0;
+            margin: 0 10px;
         }
 
         nav ul li a {
@@ -47,9 +56,35 @@
             text-decoration: underline;
         }
 
+        .buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .buttons button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .buttons .login {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        .buttons .register {
+            background-color: #2e7d32;
+            color: #fff;
+        }
+
+        .buttons button:hover {
+            opacity: 0.9;
+        }
+
         main {
             padding: 20px;
-            background-color: #f0f8f0;
             text-align: center;
         }
 
@@ -60,21 +95,14 @@
             padding: 10px 0;
         }
 
-        h1, h2 {
-            color: #1b5e20;
-        }
-
-        /* Estilo para o texto de apresentação */
-        section h2 {
-            font-size: 1.8em;
+        h2 {
             color: #1b5e20;
             font-family: 'Brush Script MT', cursive;
         }
 
-        section p {
+        p {
             font-size: 1.2em;
             color: #3a3a3a;
-            font-family: 'Brush Script MT', cursive;
         }
 
         /* Estilo do carrossel */
@@ -106,71 +134,31 @@
         .carousel p.active {
             opacity: 1;
         }
-
-        /* Estilos para telas maiores */
-        @media (min-width: 768px) {
-            header {
-                flex-direction: row;
-                justify-content: space-between;
-                align-items: center;
-                padding: 10px 20px;
-                text-align: left;
-            }
-
-            #logo {
-                margin-left: 20px;
-            }
-
-            nav ul {
-                flex-direction: row;
-            }
-
-            nav ul li {
-                margin: 0 10px;
-            }
-
-            .carousel {
-                max-width: 80%;
-                padding: 40px;
-                font-size: 1.5em;
-                height: 100px;
-            }
-
-            section h2 {
-                font-size: 2em;
-            }
-
-            section p {
-                font-size: 1.5em;
-            }
-        }
     </style>
 </head>
 <body>
     <header>
-        <div id="logo">
-            <img src="logo.jpg" alt="Logo da Livraria" width="100"> 
+        <!-- Esquerda: Logo e título -->
+        <div id="header-left">
+            <div id="logo">
+                <img src="logo.jpg" alt="Logo da Livraria">
+            </div>
+            <h1>Bem-vindo ao Meu Site de Livros</h1>
         </div>
-        <h1>Bem-vindo ao Meu Site de Livros</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="compras.html">Compras Online</a></li>
-                <li><a href="comentarios.html">Comentários</a></li>
-                <li><a href="listas.html">Minhas Listas</a></li>
-            </ul>
-        </nav>
+
+        <!-- Direita: Botões -->
+        <div class="buttons">
+            <button class="login" onclick="alert('Login!')">Entrar</button>
+            <button class="register" onclick="alert('Registrar-se!')">Inscrever-se</button>
+        </div>
     </header>
+
     <main>
         <section>
             <h2>Sobre o Site</h2>
             <p>
                 Aqui você pode comprar livros, compartilhar suas opiniões sobre leituras e organizar suas listas
                 de livros lidos e desejados.
-            </p>
-            <p>
-                Nesse aplicativo você pode entrar em chats de conversação para debater sobre suas leituras com 
-                pessoas que leram os mesmos títulos que você.
             </p>
         </section>
 
@@ -179,11 +167,10 @@
             <p class="active">“Tu te tornas eternamente responsável por aquilo que cativas”</p>
             <p>“Todos temos luz e trevas dentro de nós, o que importa é o lado do qual decidimos agir”</p>
             <p>“Vá em frente com o que seu coração lhe diz, ou você vai perder tudo.”</p>
-            <p>“Acho que, se a gente pudesse correr sem nunca se cansar, nunca mais iria querer parar. Mas às vezes existem razões muito especiais para se parar.”</p>
             <p>“Aqui você é livre para ser quem é!”</p>
-            <p>“Se eu pudesse fazer tudo do zero, não mudaria nada, porque tudo o que aconteceu nos trouxe até aqui.”</p>
         </div>
     </main>
+
     <footer>
         <p>&copy; Book Net</p>
     </footer>

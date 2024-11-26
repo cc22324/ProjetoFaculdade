@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <style>
+        /* Estilo geral */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #e6f4e4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2e7d32;
+            font-size: 1.8em;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            color: #2e7d32;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #1b5e20;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #a5d6a7;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #4caf50;
+            box-shadow: 0 0 4px rgba(76, 175, 80, 0.6);
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9em;
+            margin-top: -10px;
+            margin-bottom: 10px;
+            display: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            font-size: 1em;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2e7d32;
+        }
+
+        /* Estilo para telas maiores */
+        @media (min-width: 768px) {
+            .form-container {
+                max-width: 600px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Inscreva-se</h1>
+    <div class="form-container">
+        <h2>Formulário de Inscrição</h2>
+        <form id="registrationForm">
+            <label for="name">Nome Completo</label>
+            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+            <div class="error" id="nameError">Por favor, insira seu nome completo.</div>
+
+            <label for="email">E-mail</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+            <div class="error" id="emailError">Por favor, insira um e-mail válido.</div>
+
+            <label for="password">Senha</label>
+            <input type="password" id="password" name="password" placeholder="Digite sua senha" required>
+            <div class="error" id="passwordError">A senha deve ter pelo menos 6 caracteres.</div>
+
+            <label for="confirmPassword">Confirme a Senha</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirme sua senha" required>
+            <div class="error" id="confirmPasswordError">As senhas não coincidem.</div>
+
+            <button type="submit">Inscrever-se</button>
+        </form>
+    </div>
+
+    <script>
+        // Validação do formulário
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Captura os valores dos campos
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+
+            // Referências para os elementos de erro
+            const nameError = document.getElementById('nameError');
+            const emailError = document.getElementById('emailError');
+            const passwordError = document.getElementById('passwordError');
+            const confirmPasswordError = document.getElementById('confirmPasswordError');
+
+            // Flags para controle de erro
+            let hasError = false;
+
+            // Validação do nome
+            if (name === '') {
+                nameError.style.display = 'block';
+                hasError = true;
+            } else {
+                nameError.style.display = 'none';
+            }
+
+            // Validação do e-mail
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                emailError.style.display = 'block';
+                hasError = true;
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Validação da senha
+            if (password.length < 6) {
+                passwordError.style.display = 'block';
+                hasError = true;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Validação da confirmação da senha
+            if (password !== confirmPassword) {
+                confirmPasswordError.style.display = 'block';
+                hasError = true;
+            } else {
+                confirmPasswordError.style.display = 'none';
+            }
+
+            // Se não houver erros, exibe uma mensagem de sucesso
+            if (!hasError) {
+                alert('Cadastro realizado com sucesso!');
+                // Aqui você pode adicionar código para enviar os dados do formulário
+                document.getElementById('registrationForm').reset();
+            }
+        });
+    </script>
+</body>
+</html>
