@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Lista de Livros Desejados</title>
+    <style>
+        /* Estilos Mobile First */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 15px;
+            background-color: #e6f4e4;
+        }
+
+        header {
+            background-color: #2e7d32;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        #logo img {
+            width: 80px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1b5e20;
+            font-size: 1.5em;
+            margin-top: 15px;
+        }
+
+        form {
+            background-color: #c8e6c9;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px auto;
+            width: 100%;
+            max-width: 600px;
+            box-sizing: border-box;
+        }
+
+        form label {
+            color: #1b5e20;
+            font-weight: bold;
+            display: block;
+            margin: 10px 0 5px;
+        }
+
+        form input[type="text"], form input[type="email"], form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #1b5e20;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form button, form input[type="submit"] {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        form button:hover, form input[type="submit"]:hover {
+            background-color: #388e3c;
+        }
+
+        .livro {
+            margin-bottom: 20px;
+        }
+
+        /* Ajustes para telas maiores */
+        @media (min-width: 768px) {
+            #logo img {
+                width: 100px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            form {
+                padding: 25px;
+            }
+
+            form button, form input[type="submit"] {
+                width: auto;
+                display: inline-block;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div id="logo">
+            <img src="logo.jpg" alt="Logo da Livraria">
+        </div>
+    </header>
+
+    <h1>Formulário de Lista de Livros Desejados</h1>
+    <form id="livrosForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="email">E-mail (opcional, para contato futuro):</label>
+        <input type="email" id="email" name="email">
+
+        <h3>Lista de Livros que Deseja Ler:</h3>
+        <div id="livrosContainer">
+            <div class="livro">
+                <label>Livro 1:</label><br>
+                Título: <input type="text" name="livro_titulo[]" required><br>
+                Autor: <input type="text" name="livro_autor[]" required>
+            </div>
+        </div>
+
+        <button type="button" onclick="adicionarLivro()">Adicionar Mais Livros</button>
+
+        <label for="observacoes">Alguma observação sobre sua lista de desejos?</label><br>
+        <textarea id="observacoes" name="observacoes" rows="5"></textarea>
+
+        <input type="submit" value="Enviar Lista">
+    </form>
+
+    <script>
+        // Função para adicionar novos campos de livro
+        let contadorLivros = 1;
+        function adicionarLivro() {
+            contadorLivros++;
+            const livrosContainer = document.getElementById('livrosContainer');
+
+            // Cria o novo elemento de livro
+            const novoLivro = document.createElement('div');
+            novoLivro.classList.add('livro');
+            novoLivro.innerHTML = `
+                <label>Livro ${contadorLivros}:</label><br>
+                Título: <input type="text" name="livro_titulo[]" required><br>
+                Autor: <input type="text" name="livro_autor[]" required>
+            `;
+            livrosContainer.appendChild(novoLivro);
+        }
+    </script>
+</body>
+</html>
